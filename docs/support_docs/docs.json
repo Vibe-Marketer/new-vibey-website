@@ -1,0 +1,207 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "almond",
+  "name": "Vibey",
+  "description": "Vibey creates all your marketing assets for the next 90-days—funnels, ads, copy, emails, and more—all in one click. Just Push The Button! Your Offer's Live!",
+  "colors": {
+    "primary": "#D9FC67",
+    "light": "#FAF9F6",
+    "dark": "#202020"
+  },
+  "navigation": {
+    "dropdowns": [
+    {
+      "dropdown": "Documentation",
+      "icon": "book",
+      "description": "Get to know Vibey, and find out exactly how Vibey can take care of all your marketing needs in just a few clicks.",
+      "groups": [
+      {
+        "group": "Getting started",
+        "pages": [
+        "index",
+        "onboarding-flow",
+        "quickstart"
+        ]
+      },
+      {
+        "group": "Core Features",
+        "pages": [
+        "offers",
+        "funnels",
+        "brand-guidelines",
+        "themes",
+        "domains"
+        ]
+      },
+      {
+        "group": "Marketing Automation",
+        "pages": [
+        "sequences",
+        "campaigns",
+        "campaign-map",
+        "crm-contacts"
+        ]
+      },
+      {
+        "group": "Integrations & Analytics",
+        "pages": [
+        "integrations",
+        "analytics",
+        "payments"
+        ]
+      },
+      {
+        "group": "Advanced Features",
+        "pages": [
+        "vibey-chat",
+        "the-lab",
+        "media-library",
+        "voice-transcription",
+        "product-tours"
+        ]
+      },
+      {
+        "group": "Account Management",
+        "pages": [
+        "settings",
+        "users",
+        "features"
+        ]
+      },
+      {
+        "group": "Billing",
+        "pages": [
+        "billing/overview",
+        "billing/payments",
+        "billing/subscriptions"
+        ]
+      },
+      {
+        "group": "Coming Soon",
+        "pages": [
+        "team-collaboration",
+        "ab-testing",
+        "white-label",
+        "api-access"
+        ]
+      }
+      ]
+    },
+    {
+      "dropdown": "Changelog",
+      "icon": "history",
+      "description": "Updates and changes",
+      "pages": [
+      "changelog"
+      ]
+    }
+    ]
+  },
+  "logo": {
+    "light": "/logo/logo-light.png",
+    "dark": "/logo/logo-dark.png",
+    "href": "https://govibey.com"
+  },
+  "favicon": "/logo/v-favicon.svg",
+  "navbar": {
+    "links": [
+    {
+      "label": "Community",
+      "href": "https://skool.com/vibemarketing"
+    }
+    ],
+    "primary": {
+    "type": "button",
+    "label": "Get Started",
+    "href": "https://app.vibeos.com/login"
+    }
+  },
+  "footer": {
+    "socials": {
+    "x": "https://x.com/govibey",
+    "linkedin": "https://www.linkedin.com/company/vibeos",
+    "facebook": "https://www.facebook.com/www.govibey",
+    "youtube": "https://www.youtube.com/@govibey",
+    "instagram": "https://www.instagram.com/go.vibey"
+    },
+    "links": [
+    {
+      "header": "Resources",
+      "items": [
+      {
+        "label": "Customers",
+        "href": "https://example.com/customers"
+      },
+      {
+        "label": "Enterprise",
+        "href": "https://example.com/enterprise"
+      },
+      {
+        "label": "Request Preview",
+        "href": "https://example.com/preview"
+      }
+      ]
+    },
+    {
+      "header": "Company",
+      "items": [
+      {
+        "label": "Careers",
+        "href": "https://govibey.com/careers"
+      },
+      {
+        "label": "Blog",
+        "href": "https://govibey.com/blog"
+      },
+      {
+        "label": "Privacy Policy",
+        "href": "https://govibey.com/privacy"
+      }
+      ]
+    }
+    ]
+  },
+  "integrations": {
+    "ga4": {
+    "measurementId": "G-VHFMHWWBYW"
+    },
+    "telemetry": {
+    "enabled": false
+    },
+    "cookies": {
+    "key": "example_cookie_key",
+    "value": "example_cookie_value"
+    }
+  },
+  "contextual": {
+    "options": [
+    "copy",
+    "view",
+    "chatgpt",
+    "claude",
+    "perplexity",
+    "mcp",
+    {
+      "title": "Gemini",
+      "description": "Use Gemini to ask questions about this page from Vibey.",
+      "icon": "component/gemini-logo",
+      "href": {
+      "base": "https://gemini.google.com/u/0/app",
+      "query": [
+        {
+        "key": "text",
+        "value": "Tell me about this documentation from Vibey: $page"
+        }
+      ]
+      }
+    }
+    ]
+  },
+  "errors": {
+    "404": {
+    "redirect": false,
+    "title": "Oh No! **WTF DID YOU DO?**",
+    "description": "You've drifted into a dead zone. This _page_ doesn't exist in our system."
+    }
+  }
+}

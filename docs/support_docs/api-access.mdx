@@ -1,0 +1,516 @@
+---
+title: 'API Access'
+description: 'Programmatic access to Vibey data and functionality'
+icon: 'code'
+---
+
+# API Access
+
+<Info>
+**Coming in Q4 2026** - Public API is currently in development.
+</Info>
+
+Integrate Vibey with custom applications, automate workflows, and build on top of Vibey's platform with our REST API and webhooks.
+
+## What's Coming
+
+### REST API
+
+Full programmatic access to Vibey resources.
+
+**Endpoints:**
+- **Contacts** - Create, read, update, delete contacts
+- **Funnels** - List funnels, get funnel data, create funnels
+- **Sequences** - Manage email sequences, add/remove subscribers
+- **Campaigns** - Create campaigns, trigger workflows
+- **Analytics** - Pull funnel performance data
+- **Offers** - CRUD operations on offers
+- **Media** - Upload images, files to media library
+- **Tags** - Add/remove tags from contacts
+
+**Authentication:**
+- API keys (create in dashboard)
+- OAuth 2.0 (for third-party app integrations)
+- Rate limiting: 1,000 requests/hour (Pro), 10,000/hour (Enterprise)
+
+---
+
+### Webhooks API
+
+Send real-time data to your applications.
+
+**Events:**
+- `contact.created` - New contact added
+- `contact.updated` - Contact data changed
+- `contact.tagged` - Tag applied to contact
+- `funnel.published` - Funnel went live
+- `sequence.enrolled` - Contact added to sequence
+- `payment.succeeded` - Stripe payment completed
+- `email.opened` - Email sequence email opened
+- `email.clicked` - Link in email clicked
+- `form.submitted` - Form submission
+
+**Payload Example:**
+```json
+{
+  "event": "contact.created",
+  "timestamp": "2026-11-15T14:30:00Z",
+  "data": {
+    "id": "cont_abc123",
+    "email": "user@example.com",
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "tags": ["Lead Magnet", "Webinar Interest"],
+    "source_funnel": "funnel_xyz789",
+    "created_at": "2026-11-15T14:30:00Z"
+  }
+}
+```
+
+---
+
+### Use Cases
+
+**Custom Dashboards:**
+- Pull Vibey data into your own analytics dashboard
+- Combine Vibey metrics with other data sources
+- Build custom reports
+
+**Workflow Automation:**
+- Auto-create contacts from external systems
+- Sync data between Vibey and internal CRM
+- Trigger sequences based on external events
+
+**Mobile Apps:**
+- Build mobile app that manages Vibey funnels
+- Push notifications for new leads
+- On-the-go funnel editing
+
+**AI/ML Integration:**
+- Export contact data for ML models
+- Predict churn, LTV, conversion likelihood
+- Auto-tag contacts based on behavior
+
+**Custom Integrations:**
+- Connect Vibey to tools not in our integrations library
+- Build middleware between systems
+- Sync with proprietary software
+
+---
+
+## API Endpoints (Preview)
+
+### Contacts API
+
+**Get All Contacts**
+```http
+GET /api/v1/contacts
+Authorization: Bearer YOUR_API_KEY
+
+Response:
+{
+  "contacts": [
+    {
+      "id": "cont_123",
+      "email": "user@example.com",
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "tags": ["Customer"],
+      "created_at": "2026-01-15T10:00:00Z"
+    }
+  ],
+  "total": 150,
+  "page": 1,
+  "per_page": 50
+}
+```
+
+**Create Contact**
+```http
+POST /api/v1/contacts
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+
+{
+  "email": "newuser@example.com",
+  "first_name": "John",
+  "last_name": "Smith",
+  "phone": "+1234567890",
+  "tags": ["API Import"]
+}
+
+Response:
+{
+  "id": "cont_456",
+  "email": "newuser@example.com",
+  "created_at": "2026-11-15T14:35:00Z"
+}
+```
+
+**Update Contact**
+```http
+PATCH /api/v1/contacts/cont_456
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+
+{
+  "tags": ["API Import", "VIP"]
+}
+
+Response:
+{
+  "id": "cont_456",
+  "tags": ["API Import", "VIP"],
+  "updated_at": "2026-11-15T14:40:00Z"
+}
+```
+
+**Delete Contact**
+```http
+DELETE /api/v1/contacts/cont_456
+Authorization: Bearer YOUR_API_KEY
+
+Response:
+{
+  "deleted": true,
+  "id": "cont_456"
+}
+```
+
+---
+
+### Funnels API
+
+**List Funnels**
+```http
+GET /api/v1/funnels
+Authorization: Bearer YOUR_API_KEY
+
+Response:
+{
+  "funnels": [
+    {
+      "id": "funnel_789",
+      "name": "Lead Magnet 2026",
+      "status": "published",
+      "views": 1250,
+      "conversions": 180,
+      "conversion_rate": 14.4,
+      "created_at": "2026-10-01T08:00:00Z"
+    }
+  ]
+}
+```
+
+**Get Funnel Analytics**
+```http
+GET /api/v1/funnels/funnel_789/analytics
+Authorization: Bearer YOUR_API_KEY
+
+Response:
+{
+  "funnel_id": "funnel_789",
+  "views": 1250,
+  "unique_visitors": 1100,
+  "conversions": 180,
+  "conversion_rate": 14.4,
+  "revenue": 8950.00,
+  "top_sources": [
+    {"source": "facebook", "visitors": 600},
+    {"source": "google", "visitors": 300}
+  ]
+}
+```
+
+**Create Funnel** (Advanced)
+```http
+POST /api/v1/funnels
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+
+{
+  "name": "New Webinar Funnel",
+  "template_id": "tmpl_webinar_01",
+  "offer_id": "offer_abc",
+  "custom_domain": "webinar.example.com"
+}
+
+Response:
+{
+  "id": "funnel_new123",
+  "name": "New Webinar Funnel",
+  "status": "draft",
+  "created_at": "2026-11-15T15:00:00Z"
+}
+```
+
+---
+
+### Sequences API
+
+**Enroll Contact in Sequence**
+```http
+POST /api/v1/sequences/seq_123/enrollments
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+
+{
+  "contact_id": "cont_456"
+}
+
+Response:
+{
+  "enrollment_id": "enroll_789",
+  "sequence_id": "seq_123",
+  "contact_id": "cont_456",
+  "status": "active",
+  "started_at": "2026-11-15T15:05:00Z"
+}
+```
+
+**Unenroll Contact**
+```http
+DELETE /api/v1/sequences/seq_123/enrollments/enroll_789
+Authorization: Bearer YOUR_API_KEY
+
+Response:
+{
+  "unenrolled": true,
+  "enrollment_id": "enroll_789"
+}
+```
+
+---
+
+### Analytics API
+
+**Get Account Overview**
+```http
+GET /api/v1/analytics/overview
+Authorization: Bearer YOUR_API_KEY
+
+Response:
+{
+  "total_contacts": 3500,
+  "total_funnels": 25,
+  "total_conversions": 875,
+  "total_revenue": 125000.00,
+  "ai_words_used": 45000,
+  "ai_words_remaining": 5000,
+  "period": "current_month"
+}
+```
+
+---
+
+## SDK Libraries
+
+Official SDKs for popular languages.
+
+**Available:**
+- **JavaScript/TypeScript** - npm install @vibey/api
+- **Python** - pip install vibey-api
+- **PHP** - composer require vibey/api
+- **Ruby** - gem install vibey-api
+- **Go** - go get github.com/vibey/vibey-go
+
+**Example (JavaScript):**
+```javascript
+import { Vibey } from '@vibey/api';
+
+const vibey = new Vibey('your_api_key');
+
+// Create contact
+const contact = await vibey.contacts.create({
+  email: 'user@example.com',
+  first_name: 'Jane',
+  tags: ['API Import']
+});
+
+// Get funnels
+const funnels = await vibey.funnels.list();
+
+// Enroll in sequence
+await vibey.sequences.enroll('seq_123', contact.id);
+```
+
+---
+
+## Authentication
+
+### API Keys
+
+Create API keys in dashboard.
+
+**How to Create:**
+1. Settings > **API Access**
+2. Click **Generate API Key**
+3. Name the key (e.g., "Production App")
+4. Copy key (shown once, can't retrieve later)
+5. Use in `Authorization: Bearer YOUR_API_KEY` header
+
+**Best Practices:**
+- One key per application
+- Rotate keys every 90 days
+- Never commit keys to version control
+- Store in environment variables
+- Delete unused keys
+
+---
+
+### OAuth 2.0
+
+For third-party integrations.
+
+**Use Case:**
+- Building a Vibey integration for your SaaS product
+- Users authorize your app to access their Vibey account
+
+**Flow:**
+1. User clicks "Connect Vibey"
+2. Redirect to Vibey OAuth page
+3. User grants permission
+4. Vibey redirects back with authorization code
+5. Exchange code for access token
+6. Use token to make API requests
+
+---
+
+## Rate Limits
+
+Prevent abuse and ensure system stability.
+
+**Limits:**
+- **Free Plan:** No API access
+- **Pro Plan:** 1,000 requests/hour
+- **Enterprise Plan:** 10,000 requests/hour
+
+**Rate Limit Headers:**
+```http
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 847
+X-RateLimit-Reset: 1700064000
+```
+
+**Exceeded Limit:**
+```http
+HTTP/1.1 429 Too Many Requests
+Content-Type: application/json
+
+{
+  "error": "rate_limit_exceeded",
+  "message": "You have exceeded the rate limit. Try again in 15 minutes."
+}
+```
+
+---
+
+## Webhooks
+
+Send real-time events to your server.
+
+**Setup:**
+1. Settings > **Webhooks**
+2. Click **Add Webhook**
+3. Enter your endpoint URL (https://yourapp.com/webhooks)
+4. Select events to receive
+5. Save
+
+**Webhook Payload:**
+```json
+{
+  "id": "evt_abc123",
+  "event": "contact.created",
+  "created": 1700064000,
+  "data": {
+    "id": "cont_456",
+    "email": "user@example.com",
+    "tags": ["New Lead"]
+  }
+}
+```
+
+**Verify Webhooks:**
+```javascript
+const crypto = require('crypto');
+
+function verifyWebhook(payload, signature, secret) {
+  const hmac = crypto.createHmac('sha256', secret);
+  const digest = hmac.update(payload).digest('hex');
+  return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(digest));
+}
+```
+
+---
+
+## Pricing
+
+**API Access:**
+- **Free Plan:** No API access
+- **Pro Plan:** Included (1,000 req/hour)
+- **Enterprise Plan:** Included (10,000 req/hour, custom limits available)
+
+**API-Only Plan** (Coming Soon):
+- For apps that only use API (no UI access)
+- $99/month for 5,000 req/hour
+- No funnel, sequence, or campaign limits (API only)
+
+---
+
+## Early Access
+
+Want API access before public release?
+
+**Join Waitlist:**
+1. Email api@govibey.com
+2. Subject: "API Early Access"
+3. Include: Use case, expected request volume, tech stack
+
+**Early Access Benefits:**
+- Free API access during beta (Q3-Q4 2026)
+- Higher rate limits
+- Direct feedback channel
+- Feature request priority
+- Co-marketing (case study, testimonial)
+
+---
+
+## Developer Resources
+
+**Coming Soon:**
+- **API Documentation** - Interactive docs with try-it-now feature
+- **Code Examples** - Copy-paste snippets for common tasks
+- **Postman Collection** - Pre-built API requests
+- **OpenAPI Spec** - Generate client libraries
+- **Tutorials** - Step-by-step guides for integrations
+- **Community Forum** - Ask questions, share integrations
+
+---
+
+## Questions?
+
+**Q: When will API be available?**
+
+A: Q4 2026 (tentatively November). Join waitlist for early access in Q3.
+
+**Q: Is there a sandbox environment for testing?**
+
+A: Yes. Test mode allows API calls without affecting live data.
+
+**Q: Can I build a paid integration for Vibey?**
+
+A: Yes. You can build and sell integrations to other Vibey users.
+
+**Q: What's the API uptime SLA?**
+
+A: 99.9% uptime SLA for Enterprise plan. Best-effort for Pro.
+
+**Q: Can I get higher rate limits?**
+
+A: Yes. Contact sales for custom Enterprise plan with higher limits.
+
+---
+
+<Card title="Join API Early Access Waitlist" icon="envelope" href="mailto:api@govibey.com">
+  Email api@govibey.com to join the API Access early access waitlist
+</Card>

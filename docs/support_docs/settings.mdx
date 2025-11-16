@@ -1,0 +1,287 @@
+---
+title: 'Settings & Account Management'
+description: 'Configure your VibeOS account, preferences, and integrations'
+icon: 'gear'
+---
+
+# Settings & Account Management
+
+Manage your VibeOS account, customize preferences, and configure integrations.
+
+## Account Settings
+
+### Profile Information
+
+Update your personal information and account details.
+
+<Steps>
+  <Step title="Access Account Settings">
+    Click your profile icon in the top right. Select **Settings**.
+  </Step>
+
+  <Step title="Edit Profile">
+    Update your name, email, and profile picture. Changes save automatically.
+  </Step>
+
+  <Step title="Change Password">
+    Go to **Security** tab. Enter current password, then new password. Confirm.
+  </Step>
+</Steps>
+
+### Email Preferences
+
+Control what emails you receive from Vibey.
+
+- **Product Updates** - New features and improvements
+- **Marketing Tips** - Weekly marketing insights
+- **Billing Notifications** - Payment confirmations and invoices
+- **Security Alerts** - Login attempts and security warnings
+
+Uncheck any you don't want. Save preferences.
+
+### Time Zone
+
+Set your time zone for accurate scheduling and analytics.
+
+Go to **Preferences > Time Zone**. Select from dropdown. All timestamps update automatically.
+
+## Domain Management
+
+Connect and manage custom domains for your funnels.
+
+### Add a Domain
+
+<Steps>
+  <Step title="Navigate to Domains">
+    Settings > **Domains** > **Add Domain**
+  </Step>
+
+  <Step title="Enter Domain">
+    Type your domain (like `example.com` or `www.example.com`)
+  </Step>
+
+  <Step title="Configure DNS">
+    Vibey shows DNS records to add. Go to your domain provider and add them:
+    - **A Record** - Points to Vibey servers
+    - **CNAME Record** - For www subdomain
+    - **TXT Record** - For verification
+  </Step>
+
+  <Step title="Verify">
+    Click **Verify Domain**. Verification takes 5-60 minutes depending on DNS propagation.
+  </Step>
+</Steps>
+
+### Domain Status
+
+- **Pending** - Just added, DNS not configured
+- **Verifying** - DNS records detected, checking SSL
+- **Verified** - Active and ready to use
+- **Error** - DNS misconfiguration or SSL issue
+
+### Troubleshooting Domains
+
+**Domain stuck on "Verifying"?**
+- Wait 60 minutes for DNS propagation
+- Check DNS records match exactly what Vibey shows
+- Clear your DNS cache
+
+**SSL certificate not working?**
+- Automatic HTTPS takes 10-15 minutes after verification
+- Check domain status shows "Verified"
+- Contact support if issues persist
+
+**Can't delete domain?**
+- Unassign from all funnels first
+- Then go to Domains > Remove
+
+### Domain Limits
+
+- **Free Plan:** 1 custom domain
+- **Pro Plan:** 10 custom domains
+
+## Integrations
+
+Connect Vibey to your other tools.
+
+### Available Integrations
+
+<CardGroup cols={2}>
+  <Card title="Stripe" icon="stripe">
+    Accept payments through your funnels
+  </Card>
+  <Card title="Airtable" icon="table">
+    Sync leads to Airtable bases
+  </Card>
+  <Card title="GoHighLevel" icon="chart-line">
+    CRM integration for lead management
+  </Card>
+  <Card title="Calendly" icon="calendar">
+    Embed booking calendars in funnels
+  </Card>
+  <Card title="Cal.com" icon="calendar-check">
+    Alternative scheduling integration
+  </Card>
+</CardGroup>
+
+### Setting Up Integrations
+
+<Steps>
+  <Step title="Navigate to Integrations">
+    Settings > **Integrations**
+  </Step>
+
+  <Step title="Select Integration">
+    Click **Connect** on the integration you want
+  </Step>
+
+  <Step title="Authenticate">
+    Follow OAuth flow or enter API keys as prompted
+  </Step>
+
+  <Step title="Configure">
+    Set preferences like which Airtable base to use or which Calendly calendar to embed
+  </Step>
+</Steps>
+
+### Managing Integrations
+
+- **View Status** - See connection health in Integrations dashboard
+- **Reconnect** - If integration breaks, click **Reconnect**
+- **Disconnect** - Remove integration completely (data stays in Vibey)
+
+### Webhooks
+
+Send lead data to custom endpoints.
+
+<Steps>
+  <Step title="Create Webhook">
+    Integrations > **Webhooks** > **Add Webhook**
+  </Step>
+
+  <Step title="Configure Endpoint">
+    Enter your webhook URL. Select events to trigger:
+    - Lead captured
+    - Funnel published
+    - Payment received
+  </Step>
+
+  <Step title="Test">
+    Send test payload to verify connection
+  </Step>
+</Steps>
+
+**Webhook Payload Example:**
+
+```json
+{
+  "event": "lead.captured",
+  "timestamp": "2025-01-15T10:30:00Z",
+  "data": {
+    "lead_id": "lead_abc123",
+    "email": "user@example.com",
+    "name": "John Doe",
+    "funnel_id": "funnel_xyz789",
+    "source": "Lead Magnet Funnel"
+  }
+}
+```
+
+## Media Library Settings
+
+Manage your uploaded assets.
+
+### Storage
+
+- **Free Plan:** 1GB
+- **Pro Plan:** 25GB
+
+Check usage: Settings > **Media Library** > View storage meter
+
+### File Types
+
+Supported formats:
+- **Images:** JPG, PNG, GIF, SVG, WebP
+- **Videos:** MP4, WebM
+- **Documents:** PDF, DOCX
+
+Max file size: **50MB per file**
+
+### Organizing Assets
+
+- Create folders to organize files
+- Tag assets for easy searching
+- Delete unused files to free up space
+
+## Privacy & Data
+
+Your data, your control.
+
+### Export Your Data
+
+Download all your offers, funnels, and leads.
+
+Settings > **Privacy** > **Export Data** > Request export
+
+Receive download link via email within 24 hours.
+
+### Delete Account
+
+Permanently remove your VibeOS account.
+
+<Warning>
+  This action is irreversible. All offers, funnels, leads, and media will be permanently deleted.
+</Warning>
+
+Settings > **Privacy** > **Delete Account** > Confirm with password
+
+- Active subscription canceled immediately
+- No refunds for partial months
+- 30-day grace period to reactivate (contact support)
+
+## API Access (Coming Soon)
+
+Programmatic access to VibeOS features.
+
+- REST API for offers, funnels, leads
+- Webhook management
+- OAuth authentication
+- Rate limits: 100 requests/minute (Free), 500 requests/minute (Pro)
+
+**Status:** Launching Q1 2026
+
+## Notification Settings
+
+Control in-app and email notifications.
+
+### In-App Notifications
+
+- Funnel published successfully
+- Domain verification complete
+- Integration connection issues
+- Storage limit warnings
+
+Toggle on/off: Settings > **Notifications** > In-App
+
+### Email Notifications
+
+Choose what triggers an email:
+
+- Lead captured (daily digest or real-time)
+- Funnel performance reports (weekly)
+- Billing updates (always on)
+- Product updates (optional)
+
+Settings > **Notifications** > Email Preferences
+
+## Need Help?
+
+Questions about settings?
+
+- Check the [Features Guide](/features) for feature-specific help
+- Visit [Community](https://skool.com/vibemarketing) for quick answers
+- Email support for technical issues
+
+<Card title="Explore Features" icon="grid" href="/features">
+  Learn what Vibey can do
+</Card>

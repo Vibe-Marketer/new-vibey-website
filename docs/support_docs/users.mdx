@@ -1,0 +1,274 @@
+---
+title: 'User Management'
+description: 'Manage team members and user permissions'
+icon: 'users'
+---
+
+# User Management
+
+Manage team access and permissions in VibeOS.
+
+<Info>
+  Team collaboration features are currently in development. Full team management launches Q1 2026.
+</Info>
+
+## Coming Soon: Team Features
+
+We're building robust team collaboration for agencies and growing businesses.
+
+### Planned Features
+
+<CardGroup cols={2}>
+  <Card title="Team Members" icon="user-plus">
+    Invite unlimited team members to collaborate on offers and funnels
+  </Card>
+  <Card title="Role-Based Access" icon="shield">
+    Set permissions: Owner, Admin, Editor, Viewer
+  </Card>
+  <Card title="Workspace Management" icon="building">
+    Create separate workspaces for different clients or projects
+  </Card>
+  <Card title="Activity Logs" icon="clock">
+    Track who made what changes and when
+  </Card>
+</CardGroup>
+
+## Current User Model
+
+Right now, VibeOS operates on a **single-user account** model.
+
+- One account per subscription
+- One login per account
+- All offers, funnels, and leads owned by account holder
+
+### Sharing Access Workaround
+
+Until team features launch, here's how teams are handling collaboration:
+
+**Option 1: Shared Login (Not Recommended)**
+- Share login credentials with team members
+- Risk: No activity tracking, security concerns
+- Use a password manager if you choose this route
+
+**Option 2: Export & Share (Recommended)**
+- Export offer documents as DOCX
+- Share funnel preview links (read-only)
+- Use external tools (Notion, Google Docs) for collaboration
+
+**Option 3: Screen Share**
+- Use Zoom, Loom, or similar for walkthrough
+- Record funnel building sessions
+- Great for client approvals
+
+## Roles & Permissions (Coming Q1 2026)
+
+When team features launch, here's what each role will do:
+
+### Owner
+
+Full access. Only one owner per account.
+
+- Manage billing and subscription
+- Add/remove team members
+- Access all features
+- Delete account
+- Transfer ownership
+
+### Admin
+
+Almost full access. Multiple admins allowed.
+
+- Create and edit offers, funnels, brand guidelines
+- Manage integrations
+- View analytics
+- Add/remove team members (except owner)
+- Cannot manage billing or delete account
+
+### Editor
+
+Build and publish. No account management.
+
+- Create and edit offers and funnels
+- Publish funnels (within plan limits)
+- Upload to media library
+- View leads and analytics
+- Cannot manage team, billing, or integrations
+
+### Viewer
+
+Read-only access.
+
+- View offers, funnels, and brand guidelines
+- View analytics and leads
+- Export data
+- Cannot create, edit, or publish anything
+
+## Workspace Management (Coming Q1 2026)
+
+Agencies and consultants will be able to create separate workspaces.
+
+### How Workspaces Work
+
+- **One workspace per client** - Keep projects separate
+- **Separate billing** - Each workspace billed independently or rolled into agency plan
+- **Isolated data** - Offers, funnels, and leads don't cross workspaces
+- **Easy switching** - Toggle between workspaces in navbar
+
+### Agency Plans
+
+We're designing special agency pricing:
+
+- Unlimited workspaces
+- White-label mode (remove Vibey branding)
+- Client portal access
+- Priority support
+
+**Interested?** Join the waitlist: [govibey.com/agency](https://govibey.com/agency)
+
+## Activity Logs (Coming Q1 2026)
+
+Track everything your team does.
+
+### What's Logged
+
+- Offer created/edited/deleted
+- Funnel published/unpublished
+- Domain added/verified
+- Integration connected/disconnected
+- Team member added/removed
+- Brand guidelines generated
+
+### Log Details
+
+Each entry shows:
+- Who did it (team member name)
+- What they did (action)
+- When it happened (timestamp)
+- Where it happened (specific offer/funnel ID)
+
+Export logs as CSV for compliance or auditing.
+
+## Current Workarounds for Teams
+
+Until team features are live, here's what works:
+
+### For Agencies
+
+Create one account per client. Each account has its own:
+- Login credentials
+- Subscription (Free or Pro)
+- Offers, funnels, domains
+- Media library
+
+**Cost:** $147/month per client (Pro) or Free tier if they qualify
+
+### For In-House Teams
+
+**Small Teams (2-3 people):**
+- Use shared login with password manager
+- Document who's working on what externally
+- Use Slack or project management tool for coordination
+
+**Larger Teams (4+ people):**
+- Wait for team features (Q1 2026)
+- Use export features to share work
+- Assign one person as "Vibey admin" who builds everything
+
+## Inviting Team Members (Q1 2026)
+
+When this launches, here's how it works:
+
+<Steps>
+  <Step title="Go to Team Settings">
+    Settings > **Team** > **Invite Member**
+  </Step>
+
+  <Step title="Enter Email and Role">
+    Type their email. Choose role (Admin, Editor, Viewer).
+  </Step>
+
+  <Step title="Send Invitation">
+    They receive email invite. They create account or link existing account.
+  </Step>
+
+  <Step title="They Accept">
+    Once accepted, they appear in your team list. Start collaborating.
+  </Step>
+</Steps>
+
+### Removing Team Members
+
+Settings > **Team** > Select member > **Remove**
+
+- They lose access immediately
+- Their work stays in your account
+- Reactivate by sending new invite
+
+## Permissions Matrix (Future)
+
+Here's what each role will be able to do:
+
+| Feature | Owner | Admin | Editor | Viewer |
+|---------|-------|-------|--------|--------|
+| Manage billing | ✅ | ❌ | ❌ | ❌ |
+| Add/remove team | ✅ | ✅ | ❌ | ❌ |
+| Create offers | ✅ | ✅ | ✅ | ❌ |
+| Edit offers | ✅ | ✅ | ✅ | ❌ |
+| Create funnels | ✅ | ✅ | ✅ | ❌ |
+| Publish funnels | ✅ | ✅ | ✅ | ❌ |
+| Manage domains | ✅ | ✅ | ❌ | ❌ |
+| Manage integrations | ✅ | ✅ | ❌ | ❌ |
+| View analytics | ✅ | ✅ | ✅ | ✅ |
+| View leads | ✅ | ✅ | ✅ | ✅ |
+| Export data | ✅ | ✅ | ✅ | ✅ |
+| Delete account | ✅ | ❌ | ❌ | ❌ |
+
+## Security Best Practices
+
+Until team features launch:
+
+### If Sharing Login
+
+- Use strong, unique password (not reused from other services)
+- Enable 2FA (coming soon)
+- Use password manager (1Password, LastPass, Bitwarden)
+- Change password when team member leaves
+- Don't share credentials via email or Slack
+
+### Alternative: Screen Recording
+
+- Record yourself building in Vibey
+- Share Loom/Zoom videos with team
+- They provide feedback via comments
+- You implement changes
+- Slower, but more secure
+
+## Frequently Asked Questions
+
+**When do team features launch?**
+Q1 2026. Join our [community](https://skool.com/vibemarketing) for updates.
+
+**How much will team seats cost?**
+Still being decided. Likely additional $49-$79/month per user after first seat.
+
+**Can I transfer my account to someone else?**
+Not yet. Contact support for special cases (acquisitions, partnerships, etc.).
+
+**What if I need team access now?**
+Use export/share workarounds above, or wait until Q1 2026 for full team features.
+
+**Will team features be available on Free plan?**
+No. Team collaboration requires Pro plan. Free plan stays single-user.
+
+## Stay Updated
+
+We'll announce team features in:
+
+- Email to all Pro users
+- [Community announcements](https://skool.com/vibemarketing)
+- Changelog (Settings > Changelog)
+- Social media (@govibey on Twitter/X)
+
+<Card title="View Changelog" icon="history" href="/changelog">
+  See all product updates and releases
+</Card>

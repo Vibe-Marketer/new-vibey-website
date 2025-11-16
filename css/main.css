@@ -2160,10 +2160,10 @@ textarea.w-select {
     --body-color: #b1b5be;
     --base-color-neutral--neutral-darker: #222;
     --base-color-neutral--black: #000;
-    --base-color-brand--blue-light: #d9e5ff;
+    --base-color-brand--blue-light: #ebfdb3;
     --base-color-neutral--white: #fff;
-    --base-color-brand--blue: #2d62ff;
-    --base-color-brand--blue-dark: #080331;
+    --base-color-brand--blue: #d9fc67;
+    --base-color-brand--blue-dark: #3a4a1a;
     --base-color-brand--pink-light: #ffaefe;
     --base-color-brand--pink: #dd23bb;
     --base-color-brand--pink-dark: #3c043b;
@@ -2178,7 +2178,7 @@ textarea.w-select {
     --base-color-system--warning-yellow-dark: #5e5515;
     --base-color-system--error-red: #f8e4e4;
     --base-color-system--error-red-dark: #3b0b0b;
-    --base-color-system--focus-state: #2d62ff;
+    --base-color-system--focus-state: #d9fc67;
     --background-color--background-primary: var(--base-color-neutral--black);
     --background-color--background-secondary: var(--base-color-brand--blue);
     --background-color--background-tertiary: var(--base-color-brand--pink);
@@ -3057,7 +3057,7 @@ figcaption {
 
 .text-color-linear-blue {
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(90deg, #749cfc, #b6cefd);
+    background-image: linear-gradient(90deg, #d9fc67, #ebfdb3);
     -webkit-background-clip: text;
     background-clip: text;
     margin-top: 2rem
@@ -3066,7 +3066,7 @@ figcaption {
 .text-color-blue {
     color: #bcb4ff;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(59deg, #749cfc, #b6cefd 52%);
+    background-image: linear-gradient(59deg, #d9fc67, #ebfdb3 52%);
     -webkit-background-clip: text;
     background-clip: text
 }
@@ -5055,7 +5055,7 @@ figcaption {
 
 .quote-linear-span {
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(90deg, #749cfc, #b6cefd);
+    background-image: linear-gradient(90deg, #d9fc67, #ebfdb3);
     -webkit-background-clip: text;
     background-clip: text
 }
@@ -5784,7 +5784,7 @@ figcaption {
 
 .revolve {
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(140deg, #749cfc, #b6cefd);
+    background-image: linear-gradient(140deg, #d9fc67, #ebfdb3);
     -webkit-background-clip: text;
     background-clip: text;
     transition: opacity .5s ease-in-out
@@ -5885,7 +5885,7 @@ figcaption {
 
 .zoom-span {
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(140deg, #749cfc 45%, #b6cefd);
+    background-image: linear-gradient(140deg, #d9fc67 45%, #ebfdb3);
     -webkit-background-clip: text;
     background-clip: text
 }

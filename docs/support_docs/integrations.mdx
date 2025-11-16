@@ -1,0 +1,807 @@
+---
+title: 'Integrations'
+description: 'Connect Vibey to your favorite tools and services'
+icon: 'plug'
+---
+
+# Integrations
+
+Connect Vibey to the tools you already use. Sync leads, collect payments, schedule calls, and automate workflows.
+
+<Info>
+  Integrations are a **Pro-only feature**. Upgrade to Pro to unlock all integrations including Stripe, Airtable, GoHighLevel, Calendly, and Webhooks.
+</Info>
+
+## Available Integrations
+
+<CardGroup cols={2}>
+  <Card title="Stripe" icon="stripe">
+    Accept payments through your funnels
+  </Card>
+  <Card title="Airtable" icon="table">
+    Sync leads to Airtable bases automatically
+  </Card>
+  <Card title="GoHighLevel" icon="chart-line">
+    Send contacts to GHL CRM and trigger workflows
+  </Card>
+  <Card title="Calendly" icon="calendar">
+    Embed booking calendars in call-booking funnels
+  </Card>
+  <Card title="Cal.com" icon="calendar-check">
+    Open-source scheduling alternative
+  </Card>
+  <Card title="Webhooks" icon="webhook">
+    Send lead data to custom endpoints
+  </Card>
+</CardGroup>
+
+---
+
+## Stripe Connect Integration
+
+Accept payments for products and services with Stripe's payment infrastructure.
+
+**Stripe Connect** allows you to accept payments through Vibey while maintaining your own Stripe account and full control over funds.
+
+### What You Can Do
+
+- **Collect one-time payments** - Products, services, digital downloads
+- **Set up recurring subscriptions** - Monthly, yearly, custom billing cycles
+- **Offer payment plans** - Split payments over time
+- **Create coupons and discounts** - Percentage or fixed amount off
+- **Manage customer portal** - Customers manage their subscriptions
+- **Handle refunds** - Full or partial refunds directly from Vibey
+- **Accept multiple payment methods** - Cards, Apple Pay, Google Pay, ACH (coming soon)
+
+### How Stripe Connect Works
+
+**Traditional Stripe:**
+- You create account
+- Vibey uses its own merchant account
+- Funds go to Vibey, then to you
+
+**Stripe Connect (What Vibey Uses):**
+- You create your own Stripe account
+- You remain merchant of record
+- Funds go directly to your bank account
+- Vibey facilitates payment but doesn't touch money
+- Lower fees (no middleman)
+
+**Benefits:**
+- Full control over funds
+- Better chargeback protection
+- Access to Stripe dashboard
+- Customer data stays with you
+- Move to another platform anytime (keep Stripe account)
+
+### Setup Process
+
+<Steps>
+  <Step title="Start Stripe Connect">
+    Settings > **Integrations** > **Stripe** > **Connect with Stripe**
+  </Step>
+
+  <Step title="Create or Login to Stripe">
+    **New to Stripe?**
+    - Click "Create account"
+    - Enter email, password
+    - Continue to onboarding
+
+    **Existing Stripe User?**
+    - Click "Sign in"
+    - Use existing credentials
+    - Grant Vibey access
+  </Step>
+
+  <Step title="Complete Business Information">
+    Stripe requires:
+    - **Business type:** Individual, LLC, Corporation, Non-profit
+    - **Business name:** Legal entity name
+    - **Business address:** Physical address (not P.O. box)
+    - **Business EIN or SSN:** Tax identification number
+    - **Website URL:** Your business website
+    - **Industry:** What you sell
+    - **Phone number:** Business contact
+  </Step>
+
+  <Step title="Add Bank Account">
+    Where Stripe deposits your funds:
+    - **Account holder name:** Must match bank account
+    - **Routing number:** 9-digit bank routing number
+    - **Account number:** Your checking account number
+    - **Account type:** Checking or Savings
+
+    **Verification:** Stripe sends 2 small deposits (takes 1-2 days) to verify ownership
+  </Step>
+
+  <Step title="Identity Verification">
+    Stripe may require additional verification:
+    - **Photo ID:** Driver's license or passport
+    - **Business documents:** Articles of incorporation (for businesses)
+    - **SSN/EIN verification:** Tax ID confirmation
+
+    **Processing Time:** Usually instant, sometimes 1-3 business days
+  </Step>
+
+  <Step title="Account Activated">
+    Once approved:
+    - Stripe status shows **Connected** (green)
+    - You can create products and accept payments
+    - Test mode available for testing
+  </Step>
+
+  <Step title="Create Products">
+    Now create products to sell:
+    - Navigate to **Products** in Vibey
+    - Click **Add Product**
+    - Enter name, description, price
+    - Choose one-time or subscription
+    - Save product
+  </Step>
+
+  <Step title="Add Payment to Funnel">
+    Embed payments in funnels:
+    - Open funnel editor
+    - Add **Payment** page or element
+    - Select product from dropdown
+    - Customize checkout experience
+    - Publish funnel
+  </Step>
+</Steps>
+
+**Total Setup Time:** 15-30 minutes (plus bank verification 1-2 days)
+
+### Understanding Stripe Test Mode
+
+Stripe provides test mode for safe testing before going live.
+
+**Test Mode:**
+- Use fake credit card numbers
+- No real money charged
+- Test full payment flow
+- Test subscriptions and refunds
+- Switch to live when ready
+
+**Test Card Numbers:**
+```
+Success: 4242 4242 4242 4242
+Declined: 4000 0000 0000 0002
+Requires 3D Secure: 4000 0025 0000 3155
+
+Expiry: Any future date (e.g., 12/26)
+CVC: Any 3 digits (e.g., 123)
+ZIP: Any 5 digits (e.g., 12345)
+```
+
+**Switching to Live:**
+1. Complete Stripe onboarding
+2. Verify bank account
+3. Toggle **Test Mode** off in Vibey
+4. Start accepting real payments
+
+### Stripe Connect vs Standard Stripe
+
+| Feature | Standard Stripe (Other Platforms) | Stripe Connect (Vibey) |
+|---------|----------------------------------|------------------------|
+| **Funds Destination** | Platform's account → You | Your account directly |
+| **Merchant of Record** | Platform | You |
+| **Access to Stripe Dashboard** | Limited or none | Full access |
+| **Customer Data Ownership** | Platform owns | You own |
+| **Chargeback Handling** | Platform decides | You control |
+| **Transfer to Other Platform** | Lose history | Keep Stripe account |
+| **Fees** | Platform fee + Stripe fee | Stripe fee only |
+
+**Bottom Line:** Stripe Connect gives you full ownership and control
+
+### Products & Pricing
+
+Create unlimited products and price points.
+
+**Product Types:**
+- Digital products
+- Services
+- Coaching/consulting
+- Memberships
+- Courses
+
+**Pricing Options:**
+- One-time payment
+- Recurring subscriptions (daily, weekly, monthly, yearly)
+- Payment plans (split payments)
+
+### Coupons
+
+Create discount codes.
+
+**Discount Types:**
+- Percentage off (20% off)
+- Fixed amount ($50 off)
+
+**Duration:**
+- Once (first payment only)
+- Forever (every payment)
+- Repeating (X months)
+
+**Usage Limits:**
+- Unlimited uses
+- Limited to X redemptions
+- One per customer
+
+### Payment Links
+
+Generate shareable payment links.
+
+**Use Cases:**
+- Email directly to customers
+- Share on social media
+- Embed in funnels
+- Send via SMS
+
+**Features:**
+- Customizable success page
+- Automatic invoicing
+- Tax calculation (coming soon)
+
+---
+
+## Airtable Integration
+
+Sync leads to Airtable automatically.
+
+### Setup Process
+
+<Steps>
+  <Step title="Connect Airtable">
+    Settings > **Integrations** > **Airtable** > **Connect**
+  </Step>
+
+  <Step title="Authorize Access">
+    Login to Airtable, grant Vibey permission
+  </Step>
+
+  <Step title="Select Base">
+    Choose which Airtable base to sync to
+  </Step>
+
+  <Step title="Map Fields">
+    Match Vibey contact fields to Airtable columns
+  </Step>
+
+  <Step title="Configure Sync">
+    Choose:
+    - Which funnels trigger sync
+    - One-way or two-way sync
+    - Sync frequency
+  </Step>
+
+  <Step title="Test">
+    Submit test lead, verify it appears in Airtable
+  </Step>
+</Steps>
+
+### Field Mapping
+
+Match Vibey data to Airtable columns.
+
+**Auto-Mapped Fields:**
+- Name → Name
+- Email → Email
+- Phone → Phone
+- Created Date → Created
+
+**Custom Mapping:**
+- UTM Source → Campaign Source
+- Funnel Name → Lead Source
+- Tags → Airtable Tags (multi-select)
+
+### Sync Options
+
+**One-Way (Vibey → Airtable):**
+- New leads flow to Airtable
+- Updates in Vibey push to Airtable
+- Airtable changes don't sync back
+
+**Two-Way (Coming Soon):**
+- Changes in either platform sync both ways
+- Update contact in Airtable, reflects in Vibey
+
+### Use Cases
+
+- Client management in Airtable
+- Custom reporting dashboards
+- Team collaboration on leads
+- Integration with other Airtable automations
+
+---
+
+## GoHighLevel (GHL) Integration
+
+Sync contacts and trigger workflows in your GoHighLevel CRM.
+
+**GoHighLevel** is an all-in-one marketing platform for agencies. Vibey's integration lets you capture leads in funnels and automatically send them to GHL for follow-up and nurturing.
+
+### What You Can Do
+
+- **Auto-create GHL contacts** - Leads from Vibey instantly appear in GHL
+- **Sync tags** - Apply tags in Vibey, see them in GHL (and vice versa)
+- **Trigger GHL workflows** - Start automations based on Vibey events
+- **Two-way sync** - Update contacts in either platform, changes reflect everywhere
+- **Multi-location support** - Send leads to different GHL sub-accounts
+- **Custom field mapping** - Map Vibey data to GHL custom fields
+- **Opportunity creation** - Automatically create GHL opportunities from funnel conversions
+
+### Setup Process
+
+<Steps>
+  <Step title="Navigate to Integrations">
+    Settings > **Integrations** > **GoHighLevel** > **Connect**
+  </Step>
+
+  <Step title="Login to GoHighLevel">
+    You'll be redirected to GHL login page
+
+    **Agency Account?**
+    - Login with agency credentials
+    - Select which location (sub-account) to connect
+
+    **Single Location Account?**
+    - Login with your GHL credentials
+    - Automatically connects to your location
+  </Step>
+
+  <Step title="Authorize Vibey">
+    GHL asks for permission to:
+    - Read and write contacts
+    - Read and write tags
+    - Trigger workflows
+    - Create opportunities
+
+    Click **Authorize** to grant access
+  </Step>
+
+  <Step title="Select GHL Location">
+    **Agency Users:**
+    - Choose which location to sync with Vibey
+    - You can connect multiple Vibey accounts to different locations
+
+    **Single Location Users:**
+    - Auto-selected (your only location)
+    - Click **Continue**
+  </Step>
+
+  <Step title="Map Fields">
+    Match Vibey contact fields to GHL fields:
+
+    **Auto-Mapped:**
+    - First Name → First Name
+    - Last Name → Last Name
+    - Email → Email
+    - Phone → Phone
+
+    **Custom Mapping:**
+    - Vibey custom fields → GHL custom fields
+    - UTM parameters → GHL source tracking
+    - Funnel name → GHL lead source
+  </Step>
+
+  <Step title="Configure Tag Sync">
+    Choose tag behavior:
+
+    **Option 1: Sync All Tags**
+    - Every tag in Vibey → Creates tag in GHL
+    - Tags applied automatically
+
+    **Option 2: Selective Tags**
+    - Only specified tags sync
+    - Map Vibey tags to GHL tags
+    - Example: "Webinar Attendee" (Vibey) → "Hot Lead" (GHL)
+
+    **Two-Way Sync:**
+    - Enable to sync tags from GHL back to Vibey
+    - Changes in either platform reflect in both
+  </Step>
+
+  <Step title="Set Workflow Triggers">
+    Choose which Vibey events trigger GHL workflows:
+
+    **Available Triggers:**
+    - New lead captured
+    - Funnel step completed
+    - Tag added/removed
+    - Email opened (from Vibey sequences)
+    - Link clicked
+    - Form submitted
+
+    **For Each Trigger:**
+    - Select GHL workflow to start
+    - Map trigger data to workflow variables
+    - Set conditions (optional)
+  </Step>
+
+  <Step title="Test Connection">
+    Send test lead through Vibey funnel:
+    1. Create test funnel or use existing
+    2. Submit form with test data
+    3. Check GHL contacts list
+    4. Verify contact created with correct data
+    5. Confirm tags applied
+    6. Check workflow triggered (if configured)
+  </Step>
+
+  <Step title="Enable Sync">
+    Once testing successful:
+    - Toggle **Sync Enabled** to ON
+    - All new leads now sync automatically
+    - Existing leads can be bulk-synced (optional)
+  </Step>
+</Steps>
+
+**Total Setup Time:** 10-15 minutes
+
+### Features in Detail
+
+**Auto-Contact Creation:**
+- Lead submits Vibey funnel → Contact created in GHL within 5 seconds
+- Duplicate detection: GHL merges by email if contact exists
+- All form fields mapped to GHL contact properties
+
+**Tag Synchronization:**
+- Tags applied in Vibey → Automatically applied in GHL
+- Tags removed in Vibey → Removed in GHL (if two-way sync enabled)
+- Use tags to segment and trigger workflows
+
+**Workflow Automation:**
+- Vibey triggers → GHL workflows start
+- Pass funnel data to workflow variables
+- Example: Lead downloads guide → Starts GHL nurture sequence
+
+**Opportunity Tracking:**
+- Funnel conversion → Creates GHL opportunity
+- Track deal value, pipeline stage
+- Close opportunity when payment received (Stripe integration)
+
+**Custom Field Mapping:**
+- Map any Vibey field → Any GHL custom field
+- Use for lead scoring, segmentation, reporting
+- Example: Vibey "Budget" field → GHL "Deal Size" custom field
+
+**Multi-Location Support (Agencies):**
+- Connect different Vibey funnels to different GHL locations
+- Separate client data automatically
+- Centralized reporting in GHL agency view
+
+### Workflow Trigger Examples
+
+**Example 1: Lead Magnet Download**
+
+**Vibey Event:** Lead submits lead magnet funnel
+
+**GHL Action:**
+1. Create contact in GHL
+2. Apply tag: "Lead Magnet - [Topic]"
+3. Trigger workflow: "Lead Magnet Nurture Sequence"
+4. Send confirmation email (from GHL)
+5. Add to "New Leads" opportunity pipeline
+
+---
+
+**Example 2: Webinar Registration**
+
+**Vibey Event:** Lead registers for webinar
+
+**GHL Action:**
+1. Create/update contact
+2. Apply tag: "Webinar Registered - [Date]"
+3. Trigger workflow: "Webinar Reminder Sequence"
+4. Add calendar event to GHL calendar
+5. Send SMS reminders (from GHL)
+
+---
+
+**Example 3: High-Ticket Application**
+
+**Vibey Event:** Lead completes application form
+
+**GHL Action:**
+1. Create contact
+2. Apply tag: "Application Submitted"
+3. Create opportunity in "Applications" pipeline
+4. Set deal value from form data
+5. Trigger workflow: "Application Review Notification" (notifies sales team)
+6. Assign to sales rep (round-robin or territory-based)
+
+---
+
+### Tag-Based Automation Ideas
+
+Use Vibey tags to trigger powerful GHL workflows:
+
+**Lead Scoring:**
+- Vibey detects engaged lead (multiple pages viewed) → Applies "Hot Lead" tag → GHL workflow notifies sales rep
+
+**Segmentation:**
+- Vibey funnel determines interest (clicked "SaaS" vs "Agency") → Applies category tag → GHL sends relevant content
+
+**Re-Engagement:**
+- Vibey detects abandoned funnel → Applies "Abandoned" tag → GHL triggers win-back sequence
+
+**Upsell/Cross-Sell:**
+- Vibey payment received → Applies "Customer" tag → GHL removes from prospect workflows, adds to customer onboarding
+
+---
+
+### Two-Way Sync
+
+Changes in GHL reflect back in Vibey (if enabled).
+
+**Use Cases:**
+
+**Scenario 1:** Sales rep updates contact phone in GHL
+- Change syncs to Vibey within 5 minutes
+- Vibey sequences now use updated phone number
+
+**Scenario 2:** GHL workflow applies "Qualified" tag
+- Tag appears in Vibey automatically
+- Vibey can show different funnel content based on tag
+
+**Scenario 3:** Contact unsubscribes in GHL
+- Vibey respects unsubscribe status
+- Won't send emails from Vibey sequences
+
+**Enable Two-Way Sync:**
+- Settings > Integrations > GoHighLevel > **Enable Two-Way Sync**
+- Choose sync frequency: Real-time (5min), Hourly, or Daily
+
+---
+
+### GHL Integration Limits
+
+**Free Plan:** No GHL integration (requires Pro)
+
+**Pro Plan:**
+- Unlimited contacts synced
+- Unlimited workflow triggers
+- All locations (agency accounts)
+- Two-way sync included
+
+---
+
+## Calendar Integrations
+
+### Calendly
+
+Embed Calendly calendars in call-booking funnels.
+
+**Setup:**
+1. Get your Calendly link
+2. Funnel editor > Call Booking page > **Add Calendar**
+3. Paste Calendly URL
+4. Save
+
+**Features:**
+- Automatic timezone detection
+- Email confirmations (from Calendly)
+- Sync to your Google/Outlook calendar
+- Booking limits and buffers
+
+**Pro Tip:** Use Vibey's confirmation sequence to reduce no-shows
+
+### Cal.com
+
+Open-source alternative to Calendly.
+
+**Setup:** Same as Calendly (paste your Cal.com link)
+
+**Benefits:**
+- Self-hosted option
+- No per-user fees
+- Full customization
+- API access
+
+---
+
+## Webhooks
+
+Send lead data to custom endpoints.
+
+### What Are Webhooks?
+
+HTTP POST requests sent when events occur.
+
+**Events:**
+- Lead captured
+- Funnel published
+- Payment received (Stripe)
+- Tag added
+- Sequence enrollment
+
+### Setup Process
+
+<Steps>
+  <Step title="Create Webhook">
+    Settings > **Integrations** > **Webhooks** > **Add Webhook**
+  </Step>
+
+  <Step title="Enter Endpoint URL">
+    Your server URL that receives data
+  </Step>
+
+  <Step title="Select Events">
+    Choose which events trigger webhook
+  </Step>
+
+  <Step title="Test">
+    Send test payload to verify connection
+  </Step>
+
+  <Step title="Activate">
+    Webhook starts sending on selected events
+  </Step>
+</Steps>
+
+### Payload Example
+
+```json
+{
+  "event": "lead.captured",
+  "timestamp": "2025-01-15T10:30:00Z",
+  "data": {
+    "lead_id": "lead_abc123",
+    "email": "user@example.com",
+    "name": "John Doe",
+    "phone": "+1234567890",
+    "funnel_id": "funnel_xyz789",
+    "funnel_name": "Lead Magnet 2025",
+    "page_url": "https://example.com/opt-in",
+    "utm_source": "facebook",
+    "utm_campaign": "jan-2025"
+  }
+}
+```
+
+### Use Cases
+
+- Send to Zapier/Make
+- Custom CRM integration
+- Trigger internal workflows
+- Real-time notifications (Slack, Discord)
+- Data warehouse sync
+
+---
+
+## Coming Soon
+
+**Q1 2026:**
+- Zapier native integration
+- Make (Integromat) native integration
+- ActiveCampaign
+- ConvertKit
+- Mailchimp
+
+**Q2 2026:**
+- HubSpot
+- Salesforce
+- Pipedrive
+- Google Sheets (direct)
+- Notion
+
+---
+
+## Managing Integrations
+
+### Connection Status
+
+View all integrations at a glance.
+
+**Status Types:**
+- **Connected** (green) - Working properly
+- **Error** (red) - Connection failed, needs attention
+- **Pending** (yellow) - Awaiting authorization
+- **Disconnected** (gray) - Not connected
+
+### Reconnecting
+
+If integration breaks:
+
+1. Settings > **Integrations**
+2. Find broken integration (red status)
+3. Click **Reconnect**
+4. Re-authorize
+5. Test connection
+
+**Common Causes:**
+- Token expired (re-auth fixes it)
+- Account permissions changed
+- Service downtime
+
+### Disconnecting
+
+Remove integration completely.
+
+1. Settings > **Integrations**
+2. Select integration
+3. Click **Disconnect**
+4. Confirm
+
+**What Happens:**
+- Future data stops syncing
+- Past synced data remains in both platforms
+- Can reconnect anytime
+
+---
+
+## Troubleshooting
+
+### Integration Not Syncing
+
+**Check:**
+- Integration status = Connected
+- Event configured correctly
+- Test data to verify
+- API limits not exceeded
+
+**Fix:**
+1. Reconnect integration
+2. Check integration settings
+3. Send test event
+4. Contact support if persists
+
+### Duplicate Records
+
+**Cause:** Same lead synced multiple times
+
+**Fix (Airtable):**
+- Use email as unique identifier
+- Enable duplicate detection in Airtable
+- Manual merge if needed
+
+**Fix (GHL):**
+- GHL auto-merges by email
+- Check merge rules in GHL settings
+
+---
+
+## Best Practices
+
+### Use Webhooks for Real-Time
+
+For time-sensitive actions, use webhooks (instant delivery).
+
+For bulk operations, use scheduled syncs.
+
+### Map Fields Carefully
+
+Ensure data goes to correct fields.
+
+**Before Activating:**
+- Test with sample lead
+- Verify all fields populated correctly
+- Check date formats match
+
+### Monitor Connection Health
+
+Weekly check on integration status.
+
+**If Error:**
+- Reconnect immediately
+- Don't let data queue up
+- Fix before large campaign
+
+---
+
+## Need Help?
+
+<CardGroup cols={2}>
+  <Card title="Stripe Setup Guide">
+    Detailed Stripe Connect walkthrough (coming soon)
+  </Card>
+  <Card title="Airtable Templates">
+    Pre-built Airtable bases for Vibey (coming soon)
+  </Card>
+  <Card title="Community">
+    [Ask in Vibe Marketing Community](https://skool.com/vibemarketing)
+  </Card>
+  <Card title="Support">
+    Email integrations@govibey.com
+  </Card>
+</CardGroup>

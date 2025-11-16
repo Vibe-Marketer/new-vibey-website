@@ -1,0 +1,673 @@
+---
+title: 'CRM & Contacts'
+description: 'Manage leads, contacts, and customer data'
+icon: 'users'
+---
+
+# CRM & Contacts
+
+Capture, organize, and manage every lead from your funnels. Unlimited contacts, advanced filtering, and full integration with your marketing.
+
+## What Is the CRM?
+
+Your central database for all leads and customers.
+
+**Automatically Captures:**
+- Lead magnet opt-ins
+- Webinar registrations
+- Call bookings
+- Form submissions
+- Funnel visitors (tracked anonymously)
+
+**What You Can Do:**
+- View all contacts in one place
+- Filter and segment
+- Tag and organize
+- Export to CSV
+- Sync to external CRMs
+- Track contact activity
+
+---
+
+## How Leads Are Captured
+
+### Automatic Lead Capture
+
+Every funnel form submission creates a contact.
+
+**What's Captured:**
+- **Basic Info:** Name, email, phone (if collected)
+- **Source Tracking:**
+  - Which funnel they came from
+  - Which page they submitted on
+  - Domain they visited
+  - UTM parameters (campaign, source, medium, etc.)
+- **Technical Data:**
+  - IP address
+  - User agent (browser/device)
+  - Timezone
+  - Country
+- **Timestamp:** Exact date/time of opt-in
+
+**No Setup Required:** Works automatically when funnel is published
+
+---
+
+### Manual Contact Addition
+
+Add contacts manually.
+
+<Steps>
+  <Step title="Go to CRM">
+    Dashboard > **CRM** > **Add Contact**
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in:
+    - Name (required)
+    - Email (required)
+    - Phone (optional)
+    - Business info (optional)
+    - Tags (optional)
+  </Step>
+
+  <Step title="Save">
+    Contact added to database
+  </Step>
+</Steps>
+
+**Use Cases:**
+- Import from event (business cards)
+- Add referrals
+- Migrate from old system
+
+---
+
+### Bulk Import
+
+Upload CSV file with multiple contacts.
+
+**How to Import:**
+1. CRM > **Import Contacts**
+2. Download CSV template
+3. Fill template with contact data
+4. Upload CSV
+5. Map columns to fields
+6. Confirm import
+
+**Max Import:** 1,000 contacts per file (Pro: 10,000)
+
+---
+
+## Contact Database
+
+### Contact Fields
+
+**Basic Information:**
+- First name, last name
+- Email address
+- Phone number
+- Date of birth
+
+**Business Information:**
+- Company/business name
+- Website URL
+- Job title
+
+**Address:**
+- Street address
+- City
+- State/province
+- Postal code
+- Country
+
+**Source & Attribution:**
+- Lead source (which funnel)
+- Landing page
+- Domain visited
+- UTM campaign
+- UTM source
+- UTM medium
+- UTM content
+- UTM term
+- Referrer URL
+
+**Technical:**
+- IP address (privacy-compliant)
+- User agent
+- Timezone
+- Country (from IP)
+
+**Metadata:**
+- Contact type (lead, customer)
+- Created date
+- Last activity
+- Tags
+
+---
+
+### Contact Detail View
+
+Click any contact to see full profile.
+
+**Tabs:**
+
+**Overview:**
+- All contact information
+- Edit any field
+- Quick actions (email, delete, tag)
+
+**Activity:**
+- Timeline of all interactions
+- Funnel visits
+- Page views
+- Email opens/clicks (from sequences)
+- Form submissions
+
+**Tags:**
+- All tags applied
+- Add/remove tags
+
+**Custom Fields:**
+- Any additional data captured
+- Edit custom field values
+
+---
+
+## Filtering & Search
+
+### Quick Search
+
+Search bar at top of CRM.
+
+**Search By:**
+- Name (first, last, or full)
+- Email address
+- Phone number
+- Company name
+- City/location
+
+**Search Type:** Partial match (type "john" finds "Johnny", "Johnson", etc.)
+
+---
+
+### Advanced Filters
+
+Build complex filter queries.
+
+**Filter Fields:**
+
+**Text Filters:**
+- Name
+- Email
+- Phone
+- Business name
+- Location (city, state, country)
+
+**Multi-Select Filters:**
+- Funnels (which funnel they opted into)
+- Tags (has specific tag)
+
+**Date Filters:**
+- Created date (date range)
+- Last activity
+
+**Filter Operators:**
+- **is** - Exact match
+- **is not** - Exclude
+- **contains** - Partial match
+- **is empty** - No value
+- **is not empty** - Has value
+
+**Logic:**
+- **AND** - All conditions must match
+- **OR** - Any condition matches
+
+**Example Filter:**
+```
+Name contains "John"
+AND
+Funnel is "Lead Magnet 2025"
+AND
+Created after 2025-01-01
+AND
+Tag is "VIP"
+```
+
+---
+
+### Saved Filters
+
+Save commonly used filters.
+
+**How to Save:**
+1. Build filter
+2. Click **Save Filter**
+3. Name it (e.g., "Q1 Webinar Leads")
+4. Access from filter dropdown anytime
+
+**Use Cases:**
+- "Hot leads" (multiple page visits)
+- "Unengaged" (no email opens in 30 days)
+- "VIP customers" (purchased + specific tag)
+- Campaign-specific segments
+
+---
+
+## Tagging System
+
+### What Are Tags?
+
+Labels for organizing contacts.
+
+**Examples:**
+- Campaign tags: `webinar-jan-2025`, `launch-q1`
+- Status tags: `hot-lead`, `customer`, `unqualified`
+- Interest tags: `interested-in-coaching`, `wants-audit`
+- Behavior tags: `engaged`, `inactive`, `bounced`
+
+**Benefits:**
+- Segment contacts
+- Trigger sequences
+- Filter for exports
+- Track status
+
+---
+
+### Adding Tags
+
+**Manually:**
+1. Select contact(s)
+2. Click **Add Tag**
+3. Type tag name (or select existing)
+4. Apply
+
+**Automatically:**
+- Funnel submission (set tag on opt-in)
+- Integration rules (Airtable, GHL)
+- Sequence enrollment
+
+**Bulk Tagging:**
+1. Filter contacts
+2. Select all (or specific ones)
+3. **Bulk Actions** > **Add Tag**
+4. Tag applied to all selected
+
+---
+
+## Contact Management
+
+### Editing Contacts
+
+**Individual Edit:**
+1. Click contact
+2. Edit any field
+3. Changes save automatically
+
+**Bulk Edit:**
+1. Select multiple contacts
+2. **Bulk Actions** > **Edit**
+3. Choose field to edit
+4. Apply change to all selected
+
+---
+
+### Merging Duplicates
+
+Found duplicate contacts?
+
+<Steps>
+  <Step title="Identify Duplicates">
+    Search for contact, find duplicates
+  </Step>
+
+  <Step title="Select Primary">
+    Choose which record to keep (most complete data)
+  </Step>
+
+  <Step title="Merge">
+    Click **Merge** > Confirm
+  </Step>
+
+  <Step title="Result">
+    Primary contact retains all data, duplicate deleted, activity combined
+  </Step>
+</Steps>
+
+**Auto-Detect Duplicates:** Coming Q1 2026
+
+---
+
+### Deleting Contacts
+
+**Single Delete:**
+1. Open contact
+2. Click **Delete**
+3. Confirm (cannot undo)
+
+**Bulk Delete:**
+1. Filter or select contacts
+2. **Bulk Actions** > **Delete**
+3. Confirm
+
+<Warning>
+  Deleting contacts is permanent. Export data first if you might need it later.
+</Warning>
+
+---
+
+## Exporting Contacts
+
+### CSV Export
+
+Download contacts as spreadsheet.
+
+**What to Export:**
+1. CRM > **Export**
+2. Choose:
+   - All contacts
+   - Filtered contacts
+   - Selected contacts
+3. Select fields to include
+4. Download CSV
+
+**Use Cases:**
+- Backup your data
+- Import to external CRM
+- Send to email service
+- Share with team
+
+**Export Limits:**
+- Free: 1,000 contacts per export
+- Pro: Unlimited
+
+---
+
+## Activity Tracking
+
+### What's Tracked
+
+**Funnel Activity:**
+- Page visits (which pages, when)
+- Time on page
+- Device type
+- Location
+
+**Email Activity:**
+- Emails received (from sequences)
+- Opens (with timestamp)
+- Clicks (which links)
+- Bounces/unsubscribes
+
+**Form Activity:**
+- All form submissions
+- Which funnel/page
+- Data submitted
+
+**Timeline View:**
+All activity shown chronologically in contact detail
+
+---
+
+### Visitor Tracking
+
+Anonymous visitors tracked before they opt in.
+
+**What's Captured:**
+- Pages visited
+- Traffic source
+- Device info
+- Country
+
+**Becomes Contact When:**
+- They submit form (all visitor data linked to contact)
+
+**Privacy:**
+- No personal data captured before opt-in
+- Compliant with GDPR/privacy laws
+- IP addresses hashed
+
+---
+
+## Integrations
+
+### Sync to External CRM
+
+**Airtable:**
+- Auto-sync new leads to Airtable base
+- Two-way sync (updates flow both ways)
+- Map Vibey fields to Airtable columns
+
+**GoHighLevel:**
+- Push leads to GHL as contacts
+- Trigger GHL workflows
+- Sync tags and custom fields
+
+<Card title="Setup Integrations" icon="plug" href="/integrations">
+  Connect Airtable, GoHighLevel, and more
+</Card>
+
+---
+
+### Zapier / Make (Coming Soon)
+
+Connect Vibey CRM to 1,000+ apps.
+
+**Popular Workflows:**
+- New lead → Add to Google Sheets
+- New lead → Send Slack notification
+- Tag added → Trigger Zapier automation
+- Lead captured → Add to Monday.com
+
+**Status:** Q1 2026
+
+---
+
+## Segmentation
+
+### Creating Segments
+
+Group contacts by shared characteristics.
+
+**Common Segments:**
+
+**By Source:**
+- Lead Magnet subscribers
+- Webinar attendees
+- Call bookers
+
+**By Engagement:**
+- Opened recent emails
+- Clicked specific link
+- Visited multiple pages
+
+**By Status:**
+- New leads (last 7 days)
+- Active (engaged in last 30 days)
+- Inactive (no activity 90+ days)
+
+**By Business:**
+- Industry
+- Company size
+- Location
+
+---
+
+### Using Segments
+
+**What You Can Do:**
+- Send targeted sequences
+- Export for specific campaigns
+- Different messaging per segment
+- A/B test between segments
+
+**Example:**
+- Segment: "Webinar Attendees + Didn't Buy"
+- Action: Enroll in "Webinar Follow-Up" sequence
+- Result: Targeted nurture campaign
+
+---
+
+## Contact Limits
+
+**Free Plan:** Unlimited contacts
+**Pro Plan:** Unlimited contacts
+
+**No Per-Contact Fees:** Store as many as you need
+
+---
+
+## Privacy & Compliance
+
+### GDPR Compliance
+
+**Data Collection:**
+- Clear opt-in required
+- Purpose explained at point of capture
+- Easy unsubscribe from sequences
+
+**Data Rights:**
+- Contacts can request data deletion
+- Export contact data on request
+- Update/correct information anytime
+
+**Your Responsibilities:**
+- Only email those who opted in
+- Honor unsubscribe requests immediately
+- Keep data secure
+
+---
+
+### Data Security
+
+**How Vibey Protects Data:**
+- Encrypted at rest and in transit
+- SOC 2 compliant infrastructure
+- Role-based access (team features)
+- Regular security audits
+
+**Your Controls:**
+- Set who can access CRM (coming with team features)
+- Export and backup data anytime
+- Delete data permanently when needed
+
+---
+
+## Coming Soon
+
+**Q1 2026:**
+- Email/SMS messaging from CRM (send one-off emails to contacts)
+- Duplicate detection (auto-find and merge)
+- Custom fields builder
+- Contact scoring (engagement-based)
+- WhatsApp integration
+
+**Q2 2026:**
+- Advanced segmentation builder
+- Lifecycle stages (lead → customer → advocate)
+- Pipeline management (sales stages)
+- Task/reminder system
+- Mobile app
+
+---
+
+## Best Practices
+
+### Keep Data Clean
+
+**Monthly Maintenance:**
+- Remove hard bounces
+- Merge duplicates
+- Update tags
+- Archive inactive contacts
+
+**Why It Matters:**
+- Better deliverability
+- Accurate reporting
+- Easier segmentation
+
+---
+
+### Tag Consistently
+
+**Naming Conventions:**
+- Use lowercase
+- Hyphens for spaces (`lead-magnet-q1`)
+- Descriptive (`webinar-jan-2025` not `webinar1`)
+- Organize by category (`status-hot`, `source-facebook`)
+
+---
+
+### Segment Before Messaging
+
+Don't email your entire list.
+
+**Better:**
+- Segment by interest
+- Target engaged contacts
+- Personalize messaging
+
+**Result:**
+- Higher open rates
+- Lower unsubscribes
+- Better conversions
+
+---
+
+## Troubleshooting
+
+### Leads Not Appearing
+
+**Check:**
+- Funnel published and live
+- Form connected to CRM (should be automatic)
+- Test form submission yourself
+
+**Fix:**
+1. Submit test form
+2. Check CRM for test lead
+3. If missing, check funnel settings
+4. Contact support if persists
+
+---
+
+### Duplicate Contacts
+
+**Cause:** Same person opted in multiple times (different funnels)
+
+**Fix:**
+1. Search for contact
+2. Identify all duplicates
+3. Merge into one record
+
+**Prevent:** Coming auto-merge feature (Q1 2026)
+
+---
+
+### Export Fails
+
+**Cause:** Too many contacts, timeout
+
+**Fix:**
+1. Filter to smaller segment
+2. Export in batches
+3. Try again during off-peak hours
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Build a Funnel" icon="arrow-progress" href="/funnels">
+    Start capturing leads with funnels
+  </Card>
+  <Card title="Create Sequence" icon="paper-plane" href="/sequences">
+    Nurture contacts with email sequences
+  </Card>
+  <Card title="Setup Integrations" icon="plug" href="/integrations">
+    Sync CRM with Airtable, GoHighLevel, and more
+  </Card>
+  <Card title="View Analytics" icon="chart-line" href="/analytics">
+    Track contact sources and conversion
+  </Card>
+</CardGroup>

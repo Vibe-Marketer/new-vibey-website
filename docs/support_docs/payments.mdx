@@ -1,0 +1,658 @@
+---
+title: 'Payments & Stripe'
+description: 'Accept payments through your funnels with Stripe'
+icon: 'credit-card'
+---
+
+# Payments & Stripe
+
+Accept payments directly through your funnels. One-time purchases, subscriptions, and payment plans—all powered by Stripe.
+
+## Overview
+
+Vibey integrates with Stripe Connect for seamless payment collection.
+
+**What You Can Do:**
+- Collect one-time payments
+- Set up recurring subscriptions
+- Offer payment plans
+- Create discount coupons
+- Manage refunds
+- Customer portal for subscription management
+
+**Requirements:**
+- Stripe account (free to create)
+- Business information (for verification)
+- Bank account for payouts
+
+---
+
+## Getting Started
+
+### Connect Stripe Account
+
+<Steps>
+  <Step title="Go to Integrations">
+    Settings > **Integrations** > **Stripe**
+  </Step>
+
+  <Step title="Click Connect">
+    Click **Connect Stripe Account**
+  </Step>
+
+  <Step title="Stripe Onboarding">
+    You'll be redirected to Stripe. Complete these steps:
+    - Create Stripe account (or login)
+    - Provide business information
+    - Add bank account for payouts
+    - Submit tax information
+    - Verify identity
+  </Step>
+
+  <Step title="Return to Vibey">
+    After approval, you're redirected back to Vibey with "Connected" status
+  </Step>
+</Steps>
+
+**Onboarding Time:** 5-10 minutes
+**Verification:** Usually instant (sometimes 1-2 business days)
+
+---
+
+### Stripe Account Types
+
+**Individual:**
+- Sole proprietor
+- Freelancer
+- Creator
+
+**Business:**
+- LLC, Corporation, Partnership
+- Requires EIN (Employer Identification Number)
+- More verification required
+
+**Which to Choose:**
+- Start with Individual if unsure
+- Upgrade to Business later if needed
+
+---
+
+## Products & Services
+
+### Creating Products
+
+Define what you're selling.
+
+<Steps>
+  <Step title="Navigate to Products">
+    Settings > **Integrations** > **Stripe** > **Products**
+  </Step>
+
+  <Step title="Add Product">
+    Click **Add Product**
+  </Step>
+
+  <Step title="Enter Details">
+    - Product name (e.g., "Coaching Package")
+    - Description (customer-facing)
+    - Product type (digital, service, physical)
+  </Step>
+
+  <Step title="Save">
+    Product created, ready for pricing
+  </Step>
+</Steps>
+
+**Product Types:**
+- **Digital:** eBooks, courses, templates
+- **Service:** Coaching, consulting, design work
+- **Physical:** Shipped products (requires shipping integration)
+
+---
+
+### Setting Prices
+
+Products can have multiple price points.
+
+**Price Options:**
+
+**One-Time Payment:**
+- Customer pays once
+- Immediate access
+- Example: $497 for course
+
+**Recurring Subscription:**
+- Customer pays regularly
+- Options: Daily, weekly, monthly, yearly
+- Example: $99/month for membership
+
+**Payment Plan:**
+- Split one-time price into payments
+- Example: $1,497 paid as 3 x $499/month
+- (Set up as recurring, cancel after X payments)
+
+**Creating a Price:**
+1. Products > Select Product > **Add Price**
+2. Enter amount ($)
+3. Choose billing period (one-time or recurring)
+4. Set currency (USD, EUR, etc.)
+5. Save
+
+**Multiple Prices:**
+- Monthly: $99/mo
+- Annual: $997/year (save $191)
+- Give customers options
+
+---
+
+## Coupons & Discounts
+
+### Creating Coupons
+
+Offer discounts to customers.
+
+<Steps>
+  <Step title="Go to Coupons">
+    Settings > **Integrations** > **Stripe** > **Coupons**
+  </Step>
+
+  <Step title="Create Coupon">
+    Click **Add Coupon**
+  </Step>
+
+  <Step title="Configure Discount">
+    - Coupon code (e.g., LAUNCH50)
+    - Discount type: Percentage or fixed amount
+    - Amount (50% or $100 off)
+  </Step>
+
+  <Step title="Set Duration">
+    - Once (first payment only)
+    - Forever (every payment)
+    - Repeating (X months)
+  </Step>
+
+  <Step title="Set Limits (Optional)">
+    - Max redemptions (e.g., first 50 customers)
+    - Expiration date
+    - One per customer
+  </Step>
+
+  <Step title="Save">
+    Coupon code active
+  </Step>
+</Steps>
+
+**Use Cases:**
+- Launch discounts (LAUNCH50)
+- Referral codes (REFER20)
+- Seasonal sales (BLACKFRIDAY)
+- Influencer partnerships (PARTNER100)
+
+---
+
+### Applying Coupons
+
+**In Payment Links:**
+- Include coupon in URL: `?coupon=LAUNCH50`
+- Auto-applied at checkout
+
+**In Funnel Checkout:**
+- Customer enters code at checkout
+- Discount shows before payment
+
+---
+
+## Payment Links
+
+### Creating Payment Links
+
+Shareable checkout links for your products.
+
+<Steps>
+  <Step title="Navigate to Payment Links">
+    Settings > **Integrations** > **Stripe** > **Payment Links**
+  </Step>
+
+  <Step title="Create Link">
+    Click **Create Payment Link**
+  </Step>
+
+  <Step title="Select Product & Price">
+    Choose what to sell and which price point
+  </Step>
+
+  <Step title="Configure Options">
+    - Allow coupon codes? (yes/no)
+    - Collect shipping address? (if physical)
+    - Custom success message
+  </Step>
+
+  <Step title="Generate Link">
+    Get shareable URL (e.g., `pay.stripe.com/abc123xyz`)
+  </Step>
+</Steps>
+
+**Where to Use:**
+- Email directly to customers
+- Share on social media
+- Embed in funnels (button or iframe)
+- Include in invoices
+
+**Benefits:**
+- No funnel needed
+- Instant setup
+- Fully hosted by Stripe
+- Mobile-optimized
+
+---
+
+## Checkout Sessions
+
+### Adding Checkout to Funnels
+
+Embed payment checkout in your funnels.
+
+**Setup:**
+1. Funnel editor > Add **Payment Block**
+2. Select Stripe product
+3. Choose price
+4. Customize button text
+5. Configure success/cancel URLs
+6. Save
+
+**Checkout Options:**
+
+**Embedded Checkout:**
+- Checkout form within your funnel page
+- Customer never leaves your site
+- Best user experience
+
+**Redirect Checkout:**
+- Button redirects to Stripe-hosted checkout
+- Easier setup
+- Slightly lower conversion
+
+---
+
+### Success & Cancel Pages
+
+What happens after payment?
+
+**Success Page:**
+- Customer redirected here after successful payment
+- Show thank you message
+- Deliver product/access
+- Upsell opportunity
+
+**Cancel Page:**
+- Customer cancelled checkout
+- Show message encouraging them to try again
+- Offer help or FAQ
+
+**Setup:**
+1. Create success and cancel pages in funnel
+2. Link them in payment settings
+3. Publish
+
+---
+
+## Subscription Management
+
+### Customer Portal
+
+Let customers manage their own subscriptions.
+
+**Portal Features:**
+- View subscription details
+- Update payment method
+- Cancel subscription
+- View invoices
+- Download receipts
+
+**How to Enable:**
+1. Stripe Dashboard > **Settings** > **Customer Portal**
+2. Configure options (what customers can do)
+3. Get portal link
+4. Add to funnel or emails
+
+**Link Format:** `billing.stripe.com/p/login/abc123xyz`
+
+**Use Cases:**
+- "Manage Subscription" button in member area
+- Link in confirmation emails
+- Self-service cancellation (reduces support)
+
+---
+
+### Handling Subscriptions
+
+**Active Subscriptions:**
+- Charged automatically on billing cycle
+- Renewal emails sent (from Stripe)
+- Payments recorded in Stripe dashboard
+
+**Failed Payments:**
+- Stripe retries automatically (up to 4 times)
+- Customer emailed about failure
+- Subscription paused/cancelled if payment doesn't succeed
+
+**Cancellations:**
+- Customer cancels via portal
+- Or you cancel in Stripe dashboard
+- Access continues until end of billing period
+- No refunds (unless you issue manually)
+
+---
+
+## Refunds
+
+### Issuing Refunds
+
+**Full Refund:**
+1. Stripe Dashboard > **Payments**
+2. Find payment
+3. Click **Refund**
+4. Select "Full refund"
+5. Confirm
+
+**Partial Refund:**
+- Same process, enter partial amount
+- Example: Refund $50 of $497 payment
+
+**Refund Timeline:**
+- Credit cards: 5-10 business days
+- Debit cards: 5-10 business days
+- Depends on customer's bank
+
+**Stripe Fees:**
+- Stripe fees not refunded
+- You eat the fee cost on refunds
+
+---
+
+### Refund Policy
+
+Set clear expectations.
+
+**Recommended Policy:**
+- 7-day money-back guarantee
+- 30-day for higher ticket
+- No refunds for digital products after access granted
+
+**Where to Display:**
+- Checkout page (before payment)
+- Terms of service
+- FAQ page
+- Confirmation emails
+
+---
+
+## Invoicing
+
+### Auto-Generated Invoices
+
+Stripe creates invoices automatically.
+
+**Invoices Sent For:**
+- One-time payments
+- Subscription renewals
+- Payment plan installments
+
+**Invoice Contents:**
+- Business name
+- Customer name/email
+- Amount paid
+- Payment method (last 4 digits)
+- Date
+- Receipt number
+- Download PDF option
+
+**Customization:**
+- Add business logo
+- Include tax ID
+- Custom footer
+- (Configure in Stripe Dashboard > Settings > Invoicing)
+
+---
+
+## Tax Collection
+
+### Stripe Tax (Coming Soon)
+
+Automatic tax calculation and collection.
+
+**Features:**
+- Calculate sales tax (US)
+- VAT (EU)
+- GST (other countries)
+- Based on customer location
+- Automatic rate updates
+- Tax reporting
+
+**Setup:**
+1. Enable Stripe Tax in Stripe Dashboard
+2. Vibey automatically applies tax at checkout
+3. Tax shown as separate line item
+4. Collected and remitted by Stripe
+
+**Status:** Q1 2026 (Vibey integration)
+
+Currently: You're responsible for tax compliance. Consult an accountant.
+
+---
+
+## Payment Security
+
+### PCI Compliance
+
+Stripe is PCI Level 1 certified (highest standard).
+
+**What This Means:**
+- Card details never touch your servers
+- Vibey never sees full card numbers
+- Encrypted data in transit
+- Secure token storage
+
+**Your Responsibility:**
+- Don't store card details yourself
+- Use Stripe's hosted checkout or embedded form
+- Follow Stripe's security guidelines
+
+---
+
+### Fraud Prevention
+
+Stripe's built-in fraud detection.
+
+**Stripe Radar:**
+- Machine learning fraud detection
+- Blocks suspicious transactions
+- 3D Secure for high-risk payments
+- Automatically enabled
+
+**Dispute Management:**
+- Chargebacks handled through Stripe
+- Upload evidence via Stripe Dashboard
+- Stripe fights disputes for you (with evidence)
+
+---
+
+## Payouts
+
+### How Payouts Work
+
+**Payout Schedule:**
+- **Default:** Daily (for most businesses)
+- **Can Change To:** Weekly or monthly
+
+**Payout Timing:**
+- First payout: 7-14 days (verification period)
+- After that: 2 business days after payment received
+- Example: Payment on Monday → Payout Wednesday
+
+**Bank Account:**
+- Must verify bank account
+- Only one bank account per Stripe account
+- Change in Stripe Dashboard > **Settings** > **Payouts**
+
+---
+
+### Viewing Payouts
+
+**Stripe Dashboard:**
+- **Balance** > **Payouts**
+- See all past payouts
+- Upcoming payout amount
+- Download payout statements
+
+**Transaction Fees:**
+- Stripe takes 2.9% + $0.30 per transaction
+- Deducted before payout
+- Example: $100 sale → You receive $96.80
+
+---
+
+## Reporting
+
+### Transaction Reports
+
+**Available Reports:**
+- All transactions (payments, refunds)
+- Subscriptions (active, cancelled)
+- Failed payments
+- Disputes/chargebacks
+- Payouts
+
+**Export:**
+- CSV download
+- Custom date ranges
+- Filter by product, customer, status
+
+**Access:** Stripe Dashboard > **Reports**
+
+---
+
+## Limits & Fees
+
+### Stripe Fees
+
+**Standard Pricing:**
+- 2.9% + $0.30 per successful card charge
+- No setup fees
+- No monthly fees
+- No hidden fees
+
+**International Cards:**
+- Additional 1% for cards issued outside US
+- Currency conversion fees apply
+
+**Subscriptions:**
+- Same as one-time (2.9% + $0.30 per charge)
+- Charged on each renewal
+
+---
+
+### Payment Limits
+
+**Account Limits:**
+- No monthly cap (process unlimited)
+- Individual transaction max: $999,999.99
+
+**Withdrawal Limits:**
+- Depends on account history
+- Starts around $2,000/day
+- Increases over time with volume
+
+---
+
+## Troubleshooting
+
+### Payment Failed
+
+**Common Causes:**
+- Insufficient funds
+- Incorrect card details
+- Card declined by bank
+- Address verification failed
+
+**Customer Actions:**
+- Try different card
+- Contact their bank
+- Use different payment method
+- Check billing address matches card
+
+---
+
+### Stripe Connection Error
+
+**Cause:** OAuth connection expired, account issue
+
+**Fix:**
+1. Settings > **Integrations** > **Stripe**
+2. Click **Reconnect**
+3. Re-authorize
+4. Test with small payment
+
+---
+
+### Payout Delayed
+
+**Common Causes:**
+- Bank verification pending
+- Unusual activity (fraud prevention)
+- Holiday/weekend (no bank processing)
+
+**Fix:**
+- Wait 1-2 business days
+- Check Stripe Dashboard for issues
+- Contact Stripe support if >3 days
+
+---
+
+## Best Practices
+
+### Clear Pricing
+
+**Do:**
+- Show total price upfront
+- Explain what's included
+- List recurring vs one-time clearly
+- Show money-back guarantee
+
+**Don't:**
+- Hide fees until checkout
+- Use confusing payment plan language
+- Surprise with automatic renewals
+
+---
+
+### Optimize Checkout
+
+**Tips:**
+- Single-page checkout (less friction)
+- Mobile-optimized (50% of payments)
+- Guest checkout (no account required)
+- Multiple payment methods (cards, Apple Pay, Google Pay)
+- Trust badges (security, SSL)
+
+**Conversion Rate Goal:** >60% (checkout initiated → completed)
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Connect Stripe" icon="stripe">
+    Set up Stripe integration now
+  </Card>
+  <Card title="Create Product" icon="box">
+    Add your first product for sale
+  </Card>
+  <Card title="Build Sales Funnel" icon="arrow-progress" href="/funnels">
+    Create funnel with payment checkout
+  </Card>
+  <Card title="Integrations" icon="plug" href="/integrations">
+    View all integration options
+  </Card>
+</CardGroup>

@@ -1,0 +1,407 @@
+---
+title: 'Payment Methods'
+description: 'Add, update, and manage payment methods'
+icon: 'credit-card'
+---
+
+# Payment Methods
+
+Manage how you pay for VibeOS.
+
+## Supported Payment Methods
+
+We accept all major payment methods through Stripe:
+
+<CardGroup cols={2}>
+  <Card title="Credit Cards" icon="credit-card">
+    Visa, Mastercard, Amex, Discover
+  </Card>
+  <Card title="Debit Cards" icon="credit-card">
+    All major debit cards
+  </Card>
+  <Card title="Apple Pay" icon="apple">
+    One-tap checkout on Apple devices
+  </Card>
+  <Card title="Google Pay" icon="google">
+    Fast checkout on Android and web
+  </Card>
+</CardGroup>
+
+All payments are processed securely through **Stripe**. We never see or store your full card details.
+
+---
+
+## Adding a Payment Method
+
+<Steps>
+  <Step title="Go to Billing Settings">
+    Settings > **Billing** > **Payment Methods**
+  </Step>
+
+  <Step title="Add New Payment Method">
+    Click **Add Payment Method**
+  </Step>
+
+  <Step title="Enter Payment Details">
+    Fill in card number, expiration, CVC, and billing address
+  </Step>
+
+  <Step title="Save">
+    Click **Save**. Card is validated and stored securely.
+  </Step>
+</Steps>
+
+### What We Store
+
+- Last 4 digits of card
+- Card brand (Visa, Mastercard, etc.)
+- Expiration date
+- Billing address
+
+Your full card number is never stored on our servers. Stripe handles all sensitive data.
+
+---
+
+## Updating Your Payment Method
+
+If your card expires or you want to switch cards:
+
+<Steps>
+  <Step title="Go to Payment Methods">
+    Settings > **Billing** > **Payment Methods**
+  </Step>
+
+  <Step title="Select Current Method">
+    Click on the card you want to update
+  </Step>
+
+  <Step title="Update Details">
+    Change expiration date, billing address, or add new card
+  </Step>
+
+  <Step title="Set as Default">
+    If adding new card, set it as default for future charges
+  </Step>
+</Steps>
+
+<Info>
+  If you have an active subscription, the new payment method is charged on your next billing date.
+</Info>
+
+---
+
+## Setting a Default Payment Method
+
+If you have multiple cards saved, set which one to use:
+
+1. Settings > **Billing** > **Payment Methods**
+2. Hover over the card you want as default
+3. Click **Set as Default**
+4. Future charges use this card
+
+---
+
+## Removing a Payment Method
+
+Delete old or expired cards:
+
+<Steps>
+  <Step title="Go to Payment Methods">
+    Settings > **Billing** > **Payment Methods**
+  </Step>
+
+  <Step title="Select Card to Remove">
+    Click on the card you want to delete
+  </Step>
+
+  <Step title="Delete">
+    Click **Remove Payment Method** > Confirm
+  </Step>
+</Steps>
+
+<Warning>
+  You can't remove the default payment method if you have an active Pro subscription. Add a new card and set it as default first.
+</Warning>
+
+---
+
+## Payment Security
+
+### How We Keep Your Data Safe
+
+- **PCI DSS Compliant** - Stripe is Level 1 PCI certified (highest level)
+- **Tokenization** - Card details replaced with secure tokens
+- **Encryption** - All data encrypted in transit (TLS 1.3)
+- **No Storage** - We never store full card numbers
+- **3D Secure** - Supported for extra fraud protection
+
+### What You See vs What We See
+
+**You See:**
+- Full card number when entering
+- All card details in Stripe checkout
+
+**We See:**
+- Last 4 digits only
+- Card brand (Visa, etc.)
+- Token ID (like `card_abc123xyz`)
+
+This means even if our database is compromised, your payment info is safe.
+
+---
+
+## Failed Payments
+
+### Why Payments Fail
+
+Common reasons:
+
+- Insufficient funds
+- Expired card
+- Incorrect CVV/CVC
+- Bank decline (fraud detection)
+- Incorrect billing address
+- Card doesn't support recurring charges
+
+### What Happens When Payment Fails
+
+1. **Immediate Email** - We notify you of failed payment
+2. **Retry #1** - Automatic retry after 3 days
+3. **Retry #2** - Another retry after 5 days
+4. **Retry #3** - Final retry after 7 days
+5. **Downgrade** - If all retries fail, account moves to Free plan
+
+Your data is not deleted. Update payment method anytime to restore Pro access.
+
+### Fixing Failed Payments
+
+<Steps>
+  <Step title="Check Email">
+    We send details about why payment failed
+  </Step>
+
+  <Step title="Update Payment Method">
+    Settings > **Billing** > **Payment Methods** > Add new card
+  </Step>
+
+  <Step title="Retry Charge">
+    We automatically retry within 24 hours of updating card
+  </Step>
+
+  <Step title="Restore Access">
+    Pro features restored immediately after successful charge
+  </Step>
+</Steps>
+
+**Need Manual Retry?** Email billing@govibey.com
+
+---
+
+## Billing Address
+
+Your billing address is used for:
+
+- Card verification
+- Tax calculation (coming soon)
+- Invoice generation
+- Fraud prevention
+
+### Updating Billing Address
+
+1. Settings > **Billing** > **Payment Methods**
+2. Click on card
+3. Edit billing address
+4. Save
+
+Address changes don't trigger new charge. Takes effect on next billing cycle.
+
+---
+
+## Invoices & Receipts
+
+Every charge generates an invoice.
+
+### Accessing Invoices
+
+Settings > **Billing** > **Invoices**
+
+You'll see:
+- Invoice date
+- Amount charged
+- Payment method used
+- Invoice PDF (download)
+
+### Invoice Details Include
+
+- Invoice number
+- Billing period
+- Plan type (Pro Monthly/Annual)
+- Amount paid
+- Payment method (last 4 digits)
+- Billing address
+- Transaction ID
+
+### Custom Invoices
+
+Need company name or VAT number on invoices?
+
+Email billing@govibey.com with:
+- Company legal name
+- VAT/Tax ID (if applicable)
+- Billing address
+
+We'll update your account. Changes apply to future invoices only.
+
+---
+
+## International Payments
+
+### Supported Countries
+
+VibeOS accepts payments from 135+ countries.
+
+### Currency
+
+All charges are in **USD** ($).
+
+Your bank converts to your local currency. Exchange rates set by your card issuer.
+
+### Foreign Transaction Fees
+
+Some banks charge foreign transaction fees (1-3%). Check with your bank.
+
+VibeOS does not charge any currency conversion fees.
+
+### VAT & Sales Tax (Coming Soon)
+
+Currently, we don't collect VAT or sales tax. You're responsible for reporting to your local tax authority if required.
+
+**Future:** Automatic tax collection based on billing address (Q1 2026).
+
+---
+
+## Refunds
+
+### Refund to Payment Method
+
+All refunds go back to the original payment method used.
+
+- **Credit card:** 5-10 business days
+- **Debit card:** 5-10 business days
+- **Apple Pay/Google Pay:** 5-10 business days
+
+Timing depends on your bank.
+
+### 7-Day Money-Back Guarantee
+
+First-time Pro subscribers get full refund if canceled within 7 days.
+
+**To Request:**
+1. Email billing@govibey.com with subject "Refund Request"
+2. Include account email
+3. We process within 1-2 business days
+4. Refund arrives in 5-10 days
+
+### Prorated Refunds (Annual Plans)
+
+Cancel annual plan after 7 days? You get prorated refund for unused months.
+
+**Example:**
+- You paid $1,497 for annual plan
+- You cancel after 4 months
+- You get refund for 8 unused months: $998
+
+Formula: `(Unused Months / 12) × $1,497`
+
+---
+
+## Payment FAQs
+
+**Can I pay with PayPal?**
+Not yet. Credit/debit cards, Apple Pay, and Google Pay only. PayPal coming Q1 2026.
+
+**Do you accept bank transfers (ACH/Wire)?**
+Enterprise plans only. Email enterprise@govibey.com.
+
+**Can I pay with cryptocurrency?**
+Not currently. No plans to add crypto payments.
+
+**Why was I charged twice?**
+Likely a pending charge that will disappear in 3-5 days. If both charges settle, email billing@govibey.com.
+
+**Can I get an invoice before payment?**
+For Enterprise plans with PO requirements, yes. Email billing@govibey.com.
+
+**How do I update my billing email?**
+Settings > **Billing** > **Billing Email** > Enter new email. Invoices will be sent there.
+
+**What's the charge descriptor on my statement?**
+You'll see "VIBEOS.COM" or "VIBEY" on your bank statement.
+
+**Can I use prepaid cards?**
+Yes, if they support recurring billing. Some prepaid cards don't allow subscriptions.
+
+**Is there a minimum commitment?**
+No. Cancel anytime. No long-term contracts.
+
+---
+
+## Payment Support
+
+Payment issues? We're here to help.
+
+**For Payment Issues:**
+- Email: billing@govibey.com
+- Response time: 24 hours (Pro), 48 hours (Free)
+
+**For Fraud/Unauthorized Charges:**
+- Email: billing@govibey.com with subject "Unauthorized Charge"
+- We respond within 4 hours
+
+**For Disputes:**
+- Email billing@govibey.com before filing chargeback
+- Most issues resolved in 1-2 business days
+- Chargebacks result in account suspension
+
+---
+
+## Payment Best Practices
+
+### Keep Your Card Updated
+
+Set calendar reminder 1 month before card expires. Update before expiration to avoid service interruption.
+
+### Use Backup Payment Method
+
+Add secondary card to automatically charge if primary fails.
+
+**To Add Backup:**
+1. Add second payment method
+2. It stays on file as backup
+3. Auto-charged if primary fails
+
+### Monitor Billing Emails
+
+Always read billing emails. They contain:
+- Upcoming charge notices (3 days before)
+- Successful payment confirmations
+- Failed payment alerts
+
+### Check Bank for Declines
+
+If payment fails, check with your bank:
+- Is card active?
+- Sufficient funds?
+- Is recurring billing enabled?
+- Is international billing blocked?
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Billing Overview" icon="file-invoice" href="/billing/overview">
+    See plans and pricing
+  </Card>
+  <Card title="Manage Subscription" icon="repeat" href="/billing/subscriptions">
+    Upgrade, downgrade, or cancel
+  </Card>
+</CardGroup>
